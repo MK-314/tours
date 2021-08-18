@@ -82,6 +82,8 @@ body {
     display: inline-block;
     border-radius: 100px;
     transition: all .3s;
+    /* to put behind ::after: */
+    position: relative;
 }
 
 .btn:hover {
@@ -98,6 +100,39 @@ body {
 .btn-white {
     background-color: #fff;
     color: #777;
+}
+
+.btn::after {
+    /* copy properties: */
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    /* position: */
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    /* animation: */
+    transition: all .4s;
+}
+
+.btn-white::after {
+    /* no color of text, because we don't need one: */
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    /* making bigger on hover, opacity to zero to make it gone: */
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    /* need this to disable default animation: */
+    animation-fill-mode: backwards;
 }
 
 @keyframes moveInLeft {
@@ -121,6 +156,17 @@ body {
     }
     80% {
         transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
     }
     100% {
         opacity: 1;
