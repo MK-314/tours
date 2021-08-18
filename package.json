@@ -1,0 +1,23 @@
+{
+  "name": "css_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MK-314/css_practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MK-314/css_practice/issues"
+  },
+  "homepage": "https://github.com/MK-314/css_practice#readme",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "node-sass": "^6.0.1"
+  }
+}
