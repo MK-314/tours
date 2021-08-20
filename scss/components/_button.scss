@@ -35,6 +35,15 @@
             background-color: $color-white;
         }
     }
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+        // 
+        &::after {
+            /* no color of text, because we don't need one: */
+            background-color: $color-primary;
+        }
+    }
     &::after {
         /* copy properties: */
         content: '';
