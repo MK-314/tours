@@ -49,12 +49,22 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.5);
         transition: all 0.5s 0.2s;
+        // 
+        @include respond(tab-port) {
+            width: 95%;
+        }
     }
     // .popup__left
     &__left {
         display: table-cell;
         vertical-align: middle;
         width: 33.3333%;
+        // 
+        @include respond(tab-port) {
+            display: table-row;
+            // display: inline-block;
+            width: 100%;
+        }
     }
     // .popup__right
     &__right {
@@ -62,11 +72,21 @@
         vertical-align: middle;
         width: 66.66667%;
         padding: 3rem 5rem;
+        // 
+        @include respond(tab-port) {
+            display: block;
+            width: 100%;
+        }
     }
     // .popup__img
     &__img {
         display: block;
         width: 100%;
+        @include respond(tab-port) {
+            float: left;
+            width: 50%;
+            height: 28rem;
+        }
     }
     // .popup__text
     &__text {
@@ -76,5 +96,8 @@
         column-count: 2;
         column-gap: 4rem;
         column-rule: 1px solid $color-grey-light-2;
+        @include respond(tab-port) {
+            column-count: 1;
+        }
     }
 }
