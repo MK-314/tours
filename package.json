@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "cool": "node-sass ./scss/main.scss ./css/style.css -w"
+        "watch": "node-sass ./scss/main.scss ./css/style.css -w",
+        "compile": "node-sass ./scss/main.scss ./css/style.comp.css",
+        "prefix": "postcss --use autoprefixer -b 'last 5 versions' ./css/style.css -o ./css/style.css"
     },
     "repository": {
         "type": "git",
@@ -17,7 +19,9 @@
     },
     "homepage": "https://github.com/MK-314/css_practice#readme",
     "dependencies": {
+        "autoprefixer": "^10.3.2",
         "jquery": "^3.6.0",
-        "node-sass": "^6.0.1"
+        "node-sass": "^6.0.1",
+        "postcss-cli": "^8.3.1"
     }
 }
